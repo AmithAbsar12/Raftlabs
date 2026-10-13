@@ -21,3 +21,5 @@ alter table public.orders enable row level security;
 
 -- No public policies are created. The application accesses this table only
 -- through server-side Route Handlers using the Supabase service role key.
+revoke all on table public.orders from anon, authenticated;
+grant select, insert, update, delete on table public.orders to service_role;

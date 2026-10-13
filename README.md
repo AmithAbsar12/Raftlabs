@@ -69,17 +69,17 @@ Orders use Supabase PostgreSQL whenever the required server credentials are conf
 
 1. Create a project at [supabase.com](https://supabase.com).
 2. Open **SQL Editor**, create a new query, and run [`supabase/migrations/001_create_orders.sql`](supabase/migrations/001_create_orders.sql).
-3. In **Project Settings → API**, copy the Project URL and the `service_role` secret key.
+3. In **Project Settings → API Keys**, copy the Project URL and a server-side `secret` key. A legacy `service_role` key also works.
 4. Copy `.env.example` to `.env.local` and insert those values:
 
 ```bash
 SUPABASE_URL=https://your-project-ref.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+SUPABASE_SECRET_KEY=sb_secret_your-secret-key
 ```
 
 5. Restart `npm run dev`. New orders and order history will now persist in PostgreSQL.
 
-Never commit `.env.local`, expose the service role key in browser code, or name it with a `NEXT_PUBLIC_` prefix. Row Level Security is enabled with no public table policies because the application writes through trusted server endpoints.
+Never commit `.env.local`, expose the secret key in browser code, or name it with a `NEXT_PUBLIC_` prefix. Row Level Security is enabled with no public table policies because the application writes through trusted server endpoints.
 
 ## Testing strategy
 
@@ -122,4 +122,4 @@ AI was used as a pair-programming tool to translate the brief into a domain mode
 
 ## Deployment
 
-Deploy directly to Vercel after connecting the GitHub repository. Add `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` to the Vercel project’s Environment Variables before deploying. The same Supabase database then supports durable order tracking and history across serverless instances.
+Deploy directly to Vercel after connecting the GitHub repository. Add `SUPABASE_URL` and `SUPABASE_SECRET_KEY` to the Vercel project’s Environment Variables before deploying. The same Supabase database then supports durable order tracking and history across serverless instances.

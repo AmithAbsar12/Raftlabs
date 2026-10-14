@@ -27,21 +27,21 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000).
 
 ```bash
-npm test       # run the test suite
-npm run lint   # lint source files
-npm run build  # verify the production build
+npm test
+npm run lint
+npm run build
 ```
 
 ## REST API
 
-| Method | Endpoint | Purpose |
-| --- | --- | --- |
-| `GET` | `/api/menu` | List menu items |
-| `GET` | `/api/orders` | List orders |
-| `POST` | `/api/orders` | Validate and place an order |
-| `GET` | `/api/orders/:id` | Retrieve an order and latest status |
-| `PATCH` | `/api/orders/:id` | Update delivery details or status |
-| `DELETE` | `/api/orders/:id` | Cancel an eligible order |
+| Method   | Endpoint          | Purpose                             |
+| -------- | ----------------- | ----------------------------------- |
+| `GET`    | `/api/menu`       | List menu items                     |
+| `GET`    | `/api/orders`     | List orders                         |
+| `POST`   | `/api/orders`     | Validate and place an order         |
+| `GET`    | `/api/orders/:id` | Retrieve an order and latest status |
+| `PATCH`  | `/api/orders/:id` | Update delivery details or status   |
+| `DELETE` | `/api/orders/:id` | Cancel an eligible order            |
 
 Example order body:
 
@@ -72,15 +72,6 @@ Orders use Supabase PostgreSQL whenever the required server credentials are conf
 3. In **Project Settings → API Keys**, copy the Project URL and a server-side `secret` key. A legacy `service_role` key also works.
 4. Copy `.env.example` to `.env.local` and insert those values:
 
-```bash
-SUPABASE_URL=https://your-project-ref.supabase.co
-SUPABASE_SECRET_KEY=sb_secret_your-secret-key
-```
-
-5. Restart `npm run dev`. New orders and order history will now persist in PostgreSQL.
-
-Never commit `.env.local`, expose the secret key in browser code, or name it with a `NEXT_PUBLIC_` prefix. Row Level Security is enabled with no public table policies because the application writes through trusted server endpoints.
-
 ## Testing strategy
 
 Vitest covers order creation, retrieval, update, cancellation, server-side totals, validation failures, unavailable products, and invalid status transitions. React Testing Library covers menu rendering, search, add-to-cart, and cart UI behavior.
@@ -109,16 +100,6 @@ tests/
 ## AI usage
 
 AI was used as a pair-programming tool to translate the brief into a domain model, scaffold API and UI code, explore edge cases, generate test cases, debug build feedback, and create the original food image sheet. All architecture choices, generated code, and tests were reviewed against the assignment requirements.
-
-## Loom walkthrough outline (12–15 minutes)
-
-1. **0:00–1:30 — Problem breakdown:** menu, cart, checkout, API, validation, and status tracking.
-2. **1:30–4:00 — User journey:** search/filter, add items, edit quantity, checkout, and tracking.
-3. **4:00–7:00 — Architecture:** App Router boundaries, Route Handlers, services, and validation.
-4. **7:00–9:00 — API/security:** CRUD endpoints, server-owned prices, errors, and transitions.
-5. **9:00–11:00 — Tests:** domain and UI tests and the edge cases covered.
-6. **11:00–13:00 — Real-time simulation:** polling and elapsed-time status updates.
-7. **13:00–15:00 — AI usage, challenges, tradeoffs, and production improvements.**
 
 ## Deployment
 

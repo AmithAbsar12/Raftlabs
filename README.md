@@ -8,8 +8,6 @@ This project is my submission for the RaftLabs Senior Full Stack Developer asses
 - **GitHub:** [github.com/AmithAbsar12/Raftlabs](https://github.com/AmithAbsar12/Raftlabs)
 - **Loom walkthrough:** [RaftLabs assessment walkthrough](https://loom.com/share/folder/d2e3a7af6c0d47b39c88e7212d5a058e)
 
-The Loom walkthrough is divided into four videos because of Loom's five-minute recording limit. The combined duration is approximately 12 minutes.
-
 ## What I implemented in the frontend
 
 I used Next.js 16 with React 19 to build the frontend.

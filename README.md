@@ -4,9 +4,9 @@ This project is my submission for the RaftLabs Senior Full Stack Developer asses
 
 ## Project links
 
-- **Live application:** Add your Vercel URL here
+- **Live application:** [raftlabs-eta.vercel.app](https://raftlabs-eta.vercel.app/)
 - **GitHub:** [github.com/AmithAbsar12/Raftlabs](https://github.com/AmithAbsar12/Raftlabs)
-- **Loom walkthrough:** [RaftLabs assessment walkthrough](https://www.loom.com/looms/videos/Raftlabs-d2e3a7af6c0d47b39c88e7212d5a058e)
+- **Loom walkthrough:** [RaftLabs assessment walkthrough](https://loom.com/share/folder/d2e3a7af6c0d47b39c88e7212d5a058e)
 
 The Loom walkthrough is divided into four videos because of Loom's five-minute recording limit. The combined duration is approximately 12 minutes.
 
